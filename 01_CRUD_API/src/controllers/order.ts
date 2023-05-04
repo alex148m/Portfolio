@@ -1,11 +1,6 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 import { handleHttp } from "../utils/error.handle";
-import { JwtPayload } from "jsonwebtoken";
-
-
-interface RequestExt extends Request{
-    user?:string | JwtPayload
-}
+import { RequestExt } from "../interfaces/req-ext";
 
 const getOrders = (req: RequestExt, res: Response) => {
     try {
